@@ -1,0 +1,794 @@
+﻿
+<html>
+<head>
+
+    <meta charset="UTF-8" />
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+
+        .container {
+            background-color: whitesmoke;
+            padding-bottom: 0;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .avatar {
+            vertical-align: middle;
+            width: 50px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .container {
+            max-width: 1170px;
+            margin: auto;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .inbox_people {
+            background: #f8f8f8 none repeat scroll 0 0;
+            float: left;
+            overflow: hidden;
+            width: 40%;
+            border-right: 1px solid #c4c4c4;
+        }
+
+        .inbox_msg {
+            border: 1px solid #c4c4c4;
+            clear: both;
+            overflow: hidden;
+        }
+
+        .top_spac {
+            margin: 20px 0 0;
+        }
+
+
+        .recent_heading {
+            float: left;
+            width: 40%;
+        }
+
+        .srch_bar {
+            display: inline-block;
+            text-align: right;
+            width: 60%;
+        }
+
+        .headind_srch {
+            padding: 10px 29px 10px 20px;
+            overflow: hidden;
+            border-bottom: 1px solid #c4c4c4;
+        }
+
+        .recent_heading h4 {
+            color: #05728f;
+            font-size: 21px;
+            margin: auto;
+        }
+
+        .srch_bar input {
+            border: 1px solid #cdcdcd;
+            border-width: 0 0 1px 0;
+            width: 80%;
+            padding: 2px 0 4px 6px;
+            background: none;
+        }
+
+        .srch_bar .input-group-addon button {
+            background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+            border: medium none;
+            padding: 0;
+            color: #707070;
+            font-size: 18px;
+        }
+
+        .srch_bar .input-group-addon {
+            margin: 0 0 0 -27px;
+        }
+
+        .chat_ib h5 {
+            font-size: 15px;
+            color: #464646;
+            margin: 0 0 8px 0;
+        }
+
+            .chat_ib h5 span {
+                font-size: 13px;
+                float: right;
+            }
+
+        .chat_ib p {
+            font-size: 14px;
+            color: #989898;
+            margin: auto
+        }
+
+        .chat_img {
+            float: left;
+            width: 11%;
+        }
+
+        .chat_ib {
+            float: left;
+            padding: 0 0 0 15px;
+            width: 88%;
+        }
+
+        .chat_people {
+            overflow: hidden;
+            clear: both;
+        }
+
+        .chat_list {
+            border-bottom: 1px solid #c4c4c4;
+            margin: 0;
+            padding: 18px 16px 10px;
+        }
+
+        .inbox_chat {
+            height: 550px;
+            overflow-y: scroll;
+        }
+
+        .active_chat {
+            background: #ebebeb;
+        }
+
+        .incoming_msg_img {
+            display: inline-block;
+            width: 6%;
+        }
+
+        .received_msg {
+            display: inline-block;
+            padding: 0 0 0 10px;
+            vertical-align: top;
+            width: 92%;
+        }
+
+        .received_withd_msg p {
+            background: #ebebeb none repeat scroll 0 0;
+            border-radius: 3px;
+            color: #646464;
+            font-size: 14px;
+            margin: 0;
+            padding: 5px 10px 5px 12px;
+            width: 100%;
+        }
+
+        .time_date {
+            color: #747474;
+            display: block;
+            font-size: 12px;
+            margin: 8px 0 0;
+        }
+
+        .received_withd_msg {
+            width: 57%;
+        }
+
+        .mesgs {
+            float: left;
+            padding: 30px 15px 0 25px;
+            width: 60%;
+        }
+
+        .sent_msg p {
+            background: #05728f none repeat scroll 0 0;
+            border-radius: 3px;
+            font-size: 14px;
+            margin: 0;
+            color: #fff;
+            padding: 5px 10px 5px 12px;
+            width: 100%;
+        }
+
+        .outgoing_msg {
+            overflow: hidden;
+            margin: 26px 0 26px;
+        }
+
+        .sent_msg {
+            float: right;
+            width: 46%;
+        }
+
+        .input_msg_write input {
+            background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+            border: medium none;
+            color: #4c4c4c;
+            font-size: 15px;
+            min-height: 48px;
+            width: 100%;
+        }
+
+        .type_msg {
+            border-top: 1px solid #c4c4c4;
+            position: relative;
+        }
+
+        .msg_send_btn {
+            background: #05728f none repeat scroll 0 0;
+            border: medium none;
+            border-radius: 50%;
+            color: #fff;
+            cursor: pointer;
+            font-size: 17px;
+            height: 33px;
+            position: absolute;
+            right: 0;
+            top: 11px;
+            width: 33px;
+        }
+
+        .messaging {
+            padding: 0 0 50px 0;
+        }
+
+        .msg_history {
+            height: 516px;
+            overflow-y: auto;
+        }
+
+        .msg_container_base::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+            background-color: #F5F5F5;
+        }
+
+        .msg_container_base::-webkit-scrollbar {
+            width: 12px;
+            background-color: #F5F5F5;
+        }
+
+        .msg_container_base::-webkit-scrollbar-thumb {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+            background-color: #555;
+        }
+
+        .btn-group.dropup {
+            position: fixed;
+            left: 0px;
+            bottom: 0;
+        }
+
+        .base_sent > .avatar:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            border: 5px solid white;
+            border-right-color: transparent;
+            border-top-color: transparent;
+            box-shadow: 1px 1px 2px rgba(black, 0.2);
+            // not quite perfect but close
+        }
+
+        .msg_sent > time {
+            float: right;
+        }
+
+        .base_receive > .avatar:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            border: 5px solid #FFF;
+            border-left-color: rgba(0, 0, 0, 0);
+            border-bottom-color: rgba(0, 0, 0, 0);
+        }
+
+        .base_sent {
+            justify-content: flex-end;
+            align-items: flex-end;
+        }
+
+        .avatar {
+            position: relative;
+        }
+
+        .msg_container {
+            padding: 10px;
+            overflow: hidden;
+            display: flex;
+        }
+
+        .messages > p {
+            font-size: 13px;
+            margin: 0 0 0.2rem 0;
+        }
+
+        .messages > time {
+            font-size: 11px;
+            color: #ccc;
+        }
+
+        .messages {
+            background: white;
+            padding: 10px;
+            border-radius: 2px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+            max-width: 100%;
+        }
+
+        .top-bar {
+            background: #666;
+            color: white;
+            padding: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .msg_receive {
+            padding-left: 0;
+            margin-left: 0;
+        }
+
+        .msg_sent {
+            padding-bottom: 20px !important;
+            margin-right: 0;
+        }
+
+        .icon_minim {
+            padding: 2px 10px;
+        }
+
+        .msg_container_base {
+            background: #e5e5e5;
+            margin: 0;
+            padding: 0 10px 10px;
+            max-height: 300px;
+            overflow-x: hidden;
+        }
+
+        .icon_minim {
+            padding: 2px 10px;
+        }
+    </style>
+</head>
+<body class="bg-danger">
+    <div class="container">
+        <br>
+        <a class=" float-md-right float-sm-right btn btn-danger" href="/deconnection">Déconnexion</a>
+        <br>
+        <br>
+
+        <div class="row ">
+
+            <div class="col-lg-4  text-center">
+                <img src="//placehold.it/150" class="mx-auto img-fluid img-circle d-block" alt="avatar">
+                <br>
+                <br>
+                <form enctype="multipart/form-data" action="_URL_" method="post">
+                    <!-- MAX_FILE_SIZE doit précéder le champ input de type file -->
+                    <!-- Le nom de l'élément input détermine le nom dans le tableau $_FILES -->
+                    <input name="userfile" type="file" value="Changer photo" />
+
+                </form>
+                <br>
+                <br>
+            </div>
+            <div class="col-md-6 col-sm-6 ">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a href="" data-target="#profile" data-toggle="tab" class="nav-link active">Profile</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="" data-target="#edit" data-toggle="tab" class="nav-link">Edit</a>
+                    </li>
+                </ul>
+                <div class="tab-content py-4">
+                    <div class="tab-pane active" id="profile">
+                        <h5 class="mb-3" id="nom">  </h5>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h6>EQUIPE</h6>
+                                <p>
+                                    <span id="equipe"></span>,
+                                    <span id="poste"></span>
+                                </p>
+                                <h6>Intêrêt</h6>
+                                <p>
+                                    Salle de sport, Cross Fit, Musculation, Footing.
+                                </p>
+                            </div>
+                            <div class="col-md-6">
+                                <h6>Ancien équipes joué</h6>
+                                <a href="#" class="badge badge-dark badge-pill">U11</a>
+                                <a href="#" class="badge badge-dark badge-pill">U12</a>
+                                <a href="#" class="badge badge-dark badge-pill">U13</a>
+                                <a href="#" class="badge badge-dark badge-pill">U14</a>
+                                <a href="#" class="badge badge-dark badge-pill">U15</a>
+                                <a href="#" class="badge badge-dark badge-pill">U16</a>
+                                <a href="#" class="badge badge-dark badge-pill">U17</a>
+                                <a href="#" class="badge badge-dark badge-pill">U18</a>
+                                <hr>
+                                <span class="badge badge-primary"><i class="fa fa-user"></i> 900 Followers</span>
+                                <span class="badge badge-success"><i class="fa fa-cog"></i> 43 Forks</span>
+                                <span class="badge badge-danger"><i class="fa fa-eye"></i> 245 Views</span>
+                            </div>
+                            <div class="col-md-12">
+                                <h5 class="mt-2"><span class="fa fa-clock-o ion-clock float-right"></span>Match joué </h5>
+                                <table class="table table-sm table-hover table-striped">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <strong>Garges Djibson</strong> 2 - 2 <strong>Villeneuve FC</strong>
+                                                <br>
+                                                <strong class="float-md-left float-sm-left ">
+                                                    Villeneuve
+                                                    FC ,
+                                                </strong>Samba BA 78",90+2"
+                                                <br>
+                                                <strong class="float-md-left float-sm-left"> Garges Djibson , </strong>
+                                                Sabri BEN
+                                                YEDDER
+                                                10",45+1"
+
+
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!--/row-->
+                    </div>
+
+                    <div class="tab-pane" id="edit">
+                        <form role="form">
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label">First name</label>
+                                <div class="col-lg-9">
+                                    <input class="form-control" type="text" value="Jane">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label">Last name</label>
+                                <div class="col-lg-9">
+                                    <input class="form-control" type="text" value="Bishop">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label">Email</label>
+                                <div class="col-lg-9">
+                                    <input class="form-control" type="email" value="email@gmail.com">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label">Company</label>
+                                <div class="col-lg-9">
+                                    <input class="form-control" type="text" value="">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label">Website</label>
+                                <div class="col-lg-9">
+                                    <input class="form-control" type="url" value="">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label">Address</label>
+                                <div class="col-lg-9">
+                                    <input class="form-control" type="text" value="" placeholder="Street">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label"></label>
+                                <div class="col-lg-6">
+                                    <input class="form-control" type="text" value="" placeholder="City">
+                                </div>
+                                <div class="col-lg-3">
+                                    <input class="form-control" type="text" value="" placeholder="State">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label">Time Zone</label>
+                                <div class="col-lg-9">
+                                    <select id="user_time_zone" class="form-control" size="0">
+                                        <option value="Hawaii">(GMT-10:00) Hawaii</option>
+                                        <option value="Alaska">(GMT-09:00) Alaska</option>
+                                        <option value="Pacific Time (US &amp; Canada)">
+                                            (GMT-08:00) Pacific Time (US &amp;
+                                            Canada)
+                                        </option>
+                                        <option value="Arizona">(GMT-07:00) Arizona</option>
+                                        <option value="Mountain Time (US &amp; Canada)">
+                                            (GMT-07:00) Mountain Time (US &amp;
+                                            Canada)
+                                        </option>
+                                        <option value="Central Time (US &amp; Canada)" selected="selected">
+                                            (GMT-06:00)
+                                            Central Time (US &amp; Canada)
+                                        </option>
+                                        <option value="Eastern Time (US &amp; Canada)">
+                                            (GMT-05:00) Eastern Time (US &amp;
+                                            Canada)
+                                        </option>
+                                        <option value="Indiana (East)">(GMT-05:00) Indiana (East)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label">Username</label>
+                                <div class="col-lg-9">
+                                    <input class="form-control" type="text" value="janeuser">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label">Password</label>
+                                <div class="col-lg-9">
+                                    <input class="form-control" type="password" value="11111122333">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label">Confirm password</label>
+                                <div class="col-lg-9">
+                                    <input class="form-control" type="password" value="11111122333">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label"></label>
+                                <div class="col-lg-9">
+                                    <input type="reset" class="btn btn-secondary" value="Cancel">
+                                    <input type="button" class="btn btn-primary" value="Save Changes">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-2">
+                <ul class="list-group">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">DISCUSSION</th>
+
+                            </tr>
+                        </thead>
+                    </table>
+                    <li class="list-group-item d-flex justify-content-between align-items-center ">
+                        Message
+                        <span class="badge badge-primary badge-pill" type="button" data-toggle="modal"
+                              data-target="#exampleModal" id="vue" onclick="getvue();"></span>
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                             aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+
+                                        <div class="col-md-12 col-sm-12 ">
+                                            <ul class="nav nav-tabs">
+                                                <li class="nav-item">
+                                                    <a href="" data-target="#profiles" data-toggle="tab"
+                                                       class="nav-link active">Nouveau Message</a>
+                                                </li>
+
+                                                <li class="nav-item">
+                                                    <a href="" data-target="#edits" data-toggle="tab"
+                                                       class="nav-link">Message reçu</a>
+                                                </li>
+
+                                            </ul>
+                                            <div class="tab-content py-4">
+                                                <div class="tab-pane active" id="profiles">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Nouveau Message</h5>
+
+
+
+                                                    <div class="modal-body">
+                                                        <form>
+                                                            <div class="form-group">
+                                                                <label for="recipient"
+                                                                       class="col-form-label" ng-model="recipient">Destinataire:</label>
+                                                                <input class="p" list="amis" type="text" name="amis">
+                                                                <datalist id="amis">
+                                                                </datalist>
+                                                            </div>
+
+
+                                                            <div class="form-group">
+                                                                <label for="message-text"
+                                                                       class="col-form-label">Message:</label>
+                                                                <textarea class="form-control" id="messagese"></textarea>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary"
+                                                                data-dismiss="modal">
+                                                            Close
+                                                        </button>
+                                                        <button type="button" class="btn btn-primary" onclick="envoie()">Send message</button>
+                                                    </div>
+                                                    <!--/row-->
+                                                </div>
+
+                                                <div class="tab-pane" id="edits">
+                                                    <div class="recent_heading">
+                                                        <h4>Recent</h4>
+                                                    </div>
+                                                    <div class="srch_bar">
+                                                        <div class="stylish-input-group">
+                                                            <input type="text" class="search-bar" placeholder="Search">
+                                                            <span class="input-group-addon">
+                                                                <button type="button">
+                                                                    <i class="fa fa-search"
+                                                                       aria-hidden="true"></i>
+                                                                </button>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="inbox_chat">
+
+
+
+
+                                                    </div>
+
+                                                </div>
+
+
+
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+    <script>
+
+        var setinterval = setInterval(getmessage, 2000);
+        var setsinterval = setInterval(getnonvue, 2000);
+        getmessage();
+
+        getprofile();
+
+        getamie();
+        getnonvue();
+        function getprofile() {
+            $.ajax({
+                url: "/Profile/information",
+                method: "get",
+                dataType: "JSON",
+
+
+            }).done(function (data) {
+                console.log(data);
+                $("#nom").html(data.prenom + " " + data.nom);
+                $("#equipe").html(data.equipe);
+                $("#poste").html(data.poste);
+   
+                if (data.a == 0) {
+                    $(location).attr("href", "/connexion");
+                }
+            });
+        }
+
+        function getmessage() {
+            $.ajax({
+                url: "/Profile/getmessage",
+                method: "get",
+                dataType: "JSON",
+
+
+            }).done(function (data) {
+                console.log(data);
+                $(".inbox_chat").html(" ");
+
+                for (var i in data) {
+
+                    $(".inbox_chat").prepend('<hr> <div class="chat_list "><div class="chat_people"><div class="chat_img"><img src="https://ptetutorials.com/images/user-profile.png"alt="sunil"></div> <div class="chat_ib"> <h5 id="destinataire"> Destinataire: ' + data[i].destinataire + ' </h5> <p id="message">Message: ' + data[i].message + '</p></div></div> </div>');
+
+
+
+                }
+            });
+        }
+
+        function getamie() {
+            $.ajax({
+                url: "/Profile/getamis",
+                method: "get",
+                dataType: "JSON",
+
+
+            }).done(function (data) {
+
+                for (var a in data) {
+                    $("#amis").append('<option selected="selected">' + data[a].prenom + '</option>');
+
+                }
+
+            });
+        }
+        function envoie() {
+            var nom = $(".p").val();
+            var message = $("#messagese").val();
+
+            $.ajax({
+                url: "/Profile/message",
+                method: "post",
+                data: { "nom": nom, "message": message },
+                dataType: "JSON",
+
+
+            }).done(function (data) {
+                $(".p").val(" ");
+                $("#messagese").val(" ");
+                console.log(data);
+            });
+
+        }
+
+        function getnonvue() {
+            $.ajax({
+                url: "/Profile/getvue",
+                method: "get",
+                dataType: "JSON",
+
+
+            }).done(function (data) {
+
+                 $("#vue").html(data);
+
+
+            });
+        }
+        function getvue() {
+            $.ajax({
+                url: "/Profile/getnonvue",
+                method: "get",
+                dataType: "JSON",
+
+
+            }).done(function (data) {
+                console.log(data);
+
+
+            });
+        }
+
+    </script>
+</body>
+</html>
