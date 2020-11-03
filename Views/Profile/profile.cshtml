@@ -688,7 +688,7 @@
         getnonvue();
         function getprofile() {
             $.ajax({
-                url: "/Profile/information",
+                url: "/Profile/GetProfile",
                 method: "get",
                 dataType: "JSON",
 
@@ -707,7 +707,7 @@
 
         function getmessage() {
             $.ajax({
-                url: "/Profile/getmessage",
+                url: "/Profile/GetMessage",
                 method: "get",
                 dataType: "JSON",
 
@@ -728,7 +728,7 @@
 
         function getamie() {
             $.ajax({
-                url: "/Profile/getamis",
+                url: "/Profile/GetAmis",
                 method: "get",
                 dataType: "JSON",
 
@@ -747,7 +747,7 @@
             var message = $("#messagese").val();
 
             $.ajax({
-                url: "/Profile/message",
+                url: "/Profile/Message",
                 method: "post",
                 data: { "nom": nom, "message": message },
                 dataType: "JSON",
@@ -763,7 +763,7 @@
 
         function getnonvue() {
             $.ajax({
-                url: "/Profile/getvue",
+                url: "/Profile/Getvue",
                 method: "get",
                 dataType: "JSON",
 
@@ -777,7 +777,7 @@
         }
         function getvue() {
             $.ajax({
-                url: "/Profile/getnonvue",
+                url: "/Profile/Getnonvue",
                 method: "get",
                 dataType: "JSON",
 

@@ -18,8 +18,7 @@ using Newtonsoft.Json;
 
 namespace foots.Controllers
 {
-    [Route("[controller]")]
-    [ApiController]
+ 
     public class Profile : Controller
     {
 
@@ -29,7 +28,7 @@ namespace foots.Controllers
             return View("Profile");
         }
 
-        [HttpGet("information")]
+     
         public ActionResult GetProfile()
         {
             //je verifie les variables de session si il sont vide
@@ -52,7 +51,7 @@ namespace foots.Controllers
 
         }
 
-        [HttpGet("getmessage")]
+    
         public ActionResult GetMessage()
         {
             //je verifie la variables de session "id" si il est vide ou non
@@ -79,7 +78,7 @@ namespace foots.Controllers
 
         }
 
-        [HttpGet("getamis")]
+ 
         public ActionResult GetAmis()
         {
             //je verifie la variables de session "id" si il est vide ou non
@@ -106,8 +105,8 @@ namespace foots.Controllers
 
         }
 
-        [HttpPost("message")]
-        public ActionResult Message(string nom, string message)
+ 
+        public ActionResult Message( string nom,  string message)
         {
             var context = new djibsonContext();
             try
@@ -146,7 +145,7 @@ namespace foots.Controllers
 
         }
 
-        [HttpGet("getvue")]
+     
         public ActionResult Getvue()
         {
 
@@ -173,7 +172,7 @@ namespace foots.Controllers
 
         }
 
-        [HttpGet("getnonvue")]
+
         public ActionResult Getnonvue()
         {
 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -26,6 +27,10 @@ namespace foots
             services.AddSession();
             services.AddControllersWithViews();
             services.AddHttpContextAccessor();
+
+            
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,7 +48,7 @@ namespace foots
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseHttpsRedirection();
             app.UseRouting();
             app.UseDefaultFiles("/Images");
             app.UseAuthorization();
