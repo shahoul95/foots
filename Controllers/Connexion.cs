@@ -12,6 +12,8 @@ using foots.Models;
 
 namespace foots.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
     public class Connexion : Controller
     {
         // GET: /<controller>/
@@ -20,7 +22,7 @@ namespace foots.Controllers
             return View("connexion");
         }
 
-        [HttpPost]
+        [HttpGet("connexions")]
         public ActionResult connexions(string id, string pass)
         {
             var context = new djibsonContext();

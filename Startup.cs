@@ -57,7 +57,7 @@ namespace foots
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
-                    name: "home",
+                    name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
 
                 endpoints.MapControllerRoute(
@@ -89,7 +89,7 @@ namespace foots
              name: "classement",
              pattern: "{controller=Classement}/{action=Index}/{id?}");
 
-           
+              
             });
         }
     }

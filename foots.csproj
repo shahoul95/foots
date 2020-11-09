@@ -27,4 +27,7 @@
     <Folder Include="Views\Passchange\" />
     <Folder Include="Views\Classement\" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Remove="Views\Amis\Create.cshtml" />
+  </ItemGroup>
 </Project>

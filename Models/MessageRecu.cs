@@ -12,7 +12,12 @@ namespace foots.Models
         public DateTime Heure { get; set; }
         public int? Vue { get; set; }
         public int? NonVue { get; set; }
+        public virtual Membre ExpediteurNavigation { get; set; }
 
+        public MessageRecu()
+        {
+         
+        }
         public MessageRecu(string destinataire, int expediteur, string message, DateTime heure, int? vue, int? nonVue)
         {
             Destinataire = destinataire;
@@ -23,6 +28,6 @@ namespace foots.Models
             NonVue = nonVue;
         }
 
-        public virtual Membre ExpediteurNavigation { get; set; }
+        
     }
 }

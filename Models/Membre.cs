@@ -54,5 +54,9 @@ namespace foots.Models
         {
             return IdMembres;
         }
+        public string login()
+        {
+            return Login;
+        }
     }
 }

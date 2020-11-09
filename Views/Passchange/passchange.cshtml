@@ -86,13 +86,13 @@
             var a = $("#email").val();
 
             var c = $("#nouveau ").val();
-
+            var b = { "Login": a, "MotPasses": c };
             $.ajax({
                 url: "/Passchange/update",
                 method: "post",
-                data: { "email": a, "nouveau": c },
+                data: JSON.stringify(b),
                 dataType: "JSON",
-
+                contentType: "application/json",
 
             }).done(function (data) {
 

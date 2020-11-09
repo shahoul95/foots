@@ -18,6 +18,8 @@ using Newtonsoft.Json;
 
 namespace foots.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
     public class Passchange : Controller
     {
         // GET: /<controller>/
@@ -26,6 +28,7 @@ namespace foots.Controllers
             return View("Passchange");
         }
 
+        [HttpGet("change")]
         public ActionResult change()
         {
             var email = HttpContext.Session.GetString("email");
@@ -40,22 +43,26 @@ namespace foots.Controllers
             }
        
         }
-        public ActionResult update(string email,string nouveau)
+
+        [HttpPost("update")]
+        public async Task<JsonResult> update([FromBody] Membre member)
         {
             Chilkat.Crypt2 crypt = new Chilkat.Crypt2();
             var context = new djibsonContext();
-           var nouveaus =  crypt.BCryptHash(nouveau);
-            if( email != null && nouveau != null)
+            var nouveaus =  crypt.BCryptHash(member.MotPasses);
+            if( member.Login != null && member.MotPasses != null)
             {
-                var requete = from profilse in context.Membre where profilse.Login == email select profilse;
-                foreach(var i in requete)
+                var requete = Task.Run(() => from profilse in context.Membre where profilse.Login == member.Login select profilse);
+                var requetes = await requete;
+                foreach(var i in requetes)
                 {
                     i.MotPasses = nouveaus;
                  
                 }
                 try
                 {
-                    context.SaveChangesAsync();
+                    requete.Wait();
+                   await context.SaveChangesAsync();
                    
                     HttpContext.Session.Remove("email");
                    
@@ -66,7 +73,13 @@ namespace foots.Controllers
                     return Json(e);
                     // Provide for exceptions.
                 }
-           
+                finally
+                {
+                    if(context != null)
+                    {
+                        await context.DisposeAsync();
+                    }
+                }
             }
             return Json(0);
 

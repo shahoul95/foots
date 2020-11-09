@@ -18,6 +18,8 @@ using Newtonsoft.Json;
 
 namespace foots.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
     public class Password : Controller
     {
         // GET: /<controller>/
@@ -25,21 +27,25 @@ namespace foots.Controllers
         {
             return View("Password");
         }
-        public ActionResult password(string id)
+
+        [HttpPost("password")]
+        public async Task<ActionResult> password([FromBody] Membre member)
         {
 
             var context = new djibsonContext();
             try
             {
-                if (id != null)
+                if (member.Login != null)
                 {
 
 
-                    var a = from profile in context.Membre where profile.Login == id select new { profile.Login };
-                    var b = a.DefaultIfEmpty().Single().Login;
+                    var a = Task.Run(()=>from profile in context.Membre where profile.Login == member.Login select new { profile.Login });
+                    var c = await a;
+                    var b = c.DefaultIfEmpty().Single().Login;
 
-                    if (b == id)
+                    if (b == member.Login)
                     {
+                        a.Wait();
                         HttpContext.Session.SetString("email", b);
                         return Json(0);
                     }
@@ -60,6 +66,14 @@ namespace foots.Controllers
             {
                 return Json(e);
             }
+            finally
+            {
+                if(context != null)
+                {
+                    await context.DisposeAsync();
+                }
+            }
+            
         }
     }
 }
