@@ -22,12 +22,18 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="images\" />
     <Folder Include="Views\Password\" />
     <Folder Include="Views\Passchange\" />
     <Folder Include="Views\Classement\" />
+    <Folder Include="wwwroot\images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="Views\Amis\Create.cshtml" />
+    <Content Remove="wwwroot\js\profile.js" />
+    <Content Remove="wwwroot\images\Images.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\js\profile.js" />
+    <None Include="wwwroot\images\Images.jpg" />
   </ItemGroup>
 </Project>

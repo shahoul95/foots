@@ -3,7 +3,7 @@
 
 <head>
 
-
+    <script type="text/javascript" src="~/wwwroot/js/connexion.js"></script>
     <meta charset="UTF-8" />
     <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -70,29 +70,7 @@
         <!-- Default form login -->
         
     </div>
-    <script>
-
-        $(".btn").click(function () {
-            var id = $("#mails").val();
-            var pass = $("#motpasse").val();
-            alert(id);
-
-            $.ajax({
-                url: "/Connexion/connexions",
-                method: "get",
-                data: { "id": id, "pass": pass },
-                dataType: "JSON",
-
-
-            }).done(function (data) {
-                console.log(data);
-                $(".connection").html(data[0]);
-                if (data[1] == 1) {
-                    $(location).attr("href", "/profile");
-                }
-            });
-
-        });</script>
+   
 </body>
 
 
