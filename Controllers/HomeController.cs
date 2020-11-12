@@ -18,8 +18,8 @@ namespace foots.Controllers
         
         public IActionResult Index()
         {
-            Membre membre = new Membre("shaoul","mm","shahoul","pp","dd");
-            return View("Index",membre);
+      
+            return View("Index");
         }
 
         
