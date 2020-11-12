@@ -9,6 +9,7 @@ using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using foots.Models;
 
 namespace foots.Controllers
 {
@@ -17,8 +18,8 @@ namespace foots.Controllers
         
         public IActionResult Index()
         {
-         
-            return View("Index");
+            Membre membre = new Membre("shaoul","mm","shahoul","pp","dd");
+            return View("Index",membre);
         }
 
         

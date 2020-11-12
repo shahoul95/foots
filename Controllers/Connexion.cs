@@ -23,26 +23,26 @@ namespace foots.Controllers
         }
 
         [HttpGet("connexions")]
-        public ActionResult connexions(string id, string pass)
+        public async Task<ActionResult> connexions(string id, string pass)
         {
             var context = new djibsonContext();
             try
             {
                 Chilkat.Crypt2 crypt = new Chilkat.Crypt2();
           
-                var profile = from profiles in context.Membre
+                var profile = Task.Run(() =>from profiles in context.Membre
                               where profiles.Login == id
-                              select new { profiles.Nom, profiles.Login, profiles.Prenom, profiles.MotPasses, profiles.Poste, profiles.Equipe, profiles.Phone, profiles.IdMembres };
-          
-
-                var login = profile.DefaultIfEmpty().Single().Login;
-                var nom = profile.DefaultIfEmpty().Single().Nom;
-                var poste = profile.DefaultIfEmpty().Single().Poste;
-                var prenom = profile.DefaultIfEmpty().Single().Prenom;
-                var equipe = profile.DefaultIfEmpty().Single().Equipe;
-                var password = profile.DefaultIfEmpty().Single().MotPasses;
-                var phone = profile.DefaultIfEmpty().Single().Phone;
-                var ids = profile.DefaultIfEmpty().Single().IdMembres;
+                              select new { profiles.Nom, profiles.Login, profiles.Prenom, profiles.MotPasses, profiles.Poste, profiles.Equipe, profiles.Phone, profiles.IdMembres });
+                profile.Wait();
+                var profiles = await profile;
+                var login =   profiles.DefaultIfEmpty().Single().Login;
+                var nom = profiles.DefaultIfEmpty().Single().Nom;
+                var poste = profiles.DefaultIfEmpty().Single().Poste;
+                var prenom = profiles.DefaultIfEmpty().Single().Prenom;
+                var equipe = profiles.DefaultIfEmpty().Single().Equipe;
+                var password = profiles.DefaultIfEmpty().Single().MotPasses;
+                var phone =   profiles.DefaultIfEmpty().Single().Phone;
+                var ids = profiles.DefaultIfEmpty().Single().IdMembres;
                 var verification = crypt.BCryptVerify(pass, password);
 
                 if (login == id & verification)
@@ -84,7 +84,7 @@ namespace foots.Controllers
             }
             finally
             {
-                context.DisposeAsync();
+               await context.DisposeAsync();
             }
         }
 

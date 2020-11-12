@@ -1,8 +1,10 @@
 ﻿$(document).ready(function () {
-    $(".btn").click(function () {
+
+
+    $(".btn").submit(function () {
         var id = $("#mails").val();
         var pass = $("#motpasse").val();
-        alert(id);
+
 
         $.ajax({
             url: "/Connexion/connexions",
