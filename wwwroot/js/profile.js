@@ -14,7 +14,7 @@ function getprofile() {
 
 
     }).done(function (data) {
-        console.log(data);
+    
         $("#nom").html(data.prenom + " " + data.nom);
         $("#equipe").html(data.equipe);
         $("#poste").html(data.poste);
@@ -33,7 +33,7 @@ function getmessage() {
 
 
     }).done(function (data) {
-        console.log(data);
+  
         $(".inbox_chat").html(" ");
 
         for (var i in data) {
@@ -54,7 +54,7 @@ function getamie() {
 
 
     }).done(function (data) {
-        console.log(data);
+
         for (var a in data) {
             $("#amis").append('<option selected="selected">' + data[a].prenom + '</option>');
 
@@ -78,7 +78,7 @@ function envoie() {
     }).done(function (data) {
         $(".p").val(" ");
         $("#messagese").val(" ");
-        console.log(data);
+    
     });
 
 }
@@ -105,8 +105,7 @@ function getvue() {
 
 
     }).done(function (data) {
-        console.log(data);
-
+  
 
     });
 }

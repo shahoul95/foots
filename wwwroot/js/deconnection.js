@@ -7,7 +7,7 @@ function deco() {
 
 
     }).done(function (data) {
-        console.log(data);
+   
         var verif = data.deco;
 
         if (verif == 1) {

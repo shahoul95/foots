@@ -29,7 +29,7 @@ $(document).ready(function () {
 
         }).done(function (data) {
 
-            console.log(data);
+          
             if (data == 0) {
                 $("#nouveau").val("");
                 $("#message").html("Mot de passe changé");

@@ -1,10 +1,8 @@
 ﻿$(document).ready(function () {
-
-
-    $(".btn").submit(function () {
+    $(".btn").click(function () {
         var id = $("#mails").val();
         var pass = $("#motpasse").val();
-
+ 
 
         $.ajax({
             url: "/Connexion/connexions",
@@ -14,7 +12,7 @@
 
 
         }).done(function (data) {
-            console.log(data);
+        
             $(".connection").html(data[0]);
             if (data[1] == 1) {
                 $(location).attr("href", "/profile");

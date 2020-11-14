@@ -23,7 +23,7 @@ namespace foots.Controllers
         }
 
         [HttpGet("connexions")]
-        public async Task<ActionResult> connexions(string id, string pass)
+        public async Task<JsonResult> connexions(string id, string pass)
         {
             var context = new djibsonContext();
             try

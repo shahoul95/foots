@@ -11,7 +11,7 @@ $(".btn").click(function () {
         dataType: "JSON",
         contentType: "application/json",
     }).done(function (data) {
-        console.log(data);
+  
         if (data == 0) {
             $(location).attr("href", "/passchange");
         }
