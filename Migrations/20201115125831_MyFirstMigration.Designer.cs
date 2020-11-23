@@ -14,7 +14,7 @@ namespace foots.Migrations
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
-#pragma warning disable 612, 618
+
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.1.1")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
@@ -170,7 +170,7 @@ namespace foots.Migrations
                         .HasConstraintName("message_recu_ibfk_1")
                         .IsRequired();
                 });
-#pragma warning restore 612, 618
+
         }
     }
 }

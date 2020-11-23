@@ -8,7 +8,7 @@
             url: "/Connexion/connexions",
             method: "get",
             data: { "id": id, "pass": pass },
-            dataType: "JSON",
+          
 
 
         }).done(function (data) {

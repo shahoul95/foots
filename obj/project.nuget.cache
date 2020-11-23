@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "0uhXLGgW4AOZJTC0bDiapQ/Zc27jNtTe46bulZ18iO7HFzH+UUOStEf5Sm5Ra7xB+aLqNPr3nmPBKOjAjrjn5g==",
+  "dgSpecHash": "8d7g4QTapQVxXq+ukOlf7IaeiUFEXjWk1MxQa+T8tiLqRE+d9CDGCbTTjf6N6tmA48EwrcjOYpn42da8AorBvQ==",
   "success": true,
   "projectFilePath": "/Users/Shahoul/Projects/foots/foots/foots.csproj",
   "expectedPackageFiles": [
@@ -18,10 +18,11 @@
     "/Users/Shahoul/.nuget/packages/microsoft.codeanalysis.common/1.3.0/microsoft.codeanalysis.common.1.3.0.nupkg.sha512",
     "/Users/Shahoul/.nuget/packages/microsoft.codeanalysis.csharp/1.3.0/microsoft.codeanalysis.csharp.1.3.0.nupkg.sha512",
     "/Users/Shahoul/.nuget/packages/microsoft.codeanalysis.visualbasic/1.3.0/microsoft.codeanalysis.visualbasic.1.3.0.nupkg.sha512",
-    "/Users/Shahoul/.nuget/packages/microsoft.csharp/4.0.1/microsoft.csharp.4.0.1.nupkg.sha512",
+    "/Users/Shahoul/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/Users/Shahoul/.nuget/packages/microsoft.entityframeworkcore/3.1.1/microsoft.entityframeworkcore.3.1.1.nupkg.sha512",
     "/Users/Shahoul/.nuget/packages/microsoft.entityframeworkcore.abstractions/3.1.1/microsoft.entityframeworkcore.abstractions.3.1.1.nupkg.sha512",
     "/Users/Shahoul/.nuget/packages/microsoft.entityframeworkcore.analyzers/3.1.1/microsoft.entityframeworkcore.analyzers.3.1.1.nupkg.sha512",
+    "/Users/Shahoul/.nuget/packages/microsoft.entityframeworkcore.design/3.1.1/microsoft.entityframeworkcore.design.3.1.1.nupkg.sha512",
     "/Users/Shahoul/.nuget/packages/microsoft.entityframeworkcore.relational/3.1.1/microsoft.entityframeworkcore.relational.3.1.1.nupkg.sha512",
     "/Users/Shahoul/.nuget/packages/microsoft.extensions.caching.abstractions/3.1.1/microsoft.extensions.caching.abstractions.3.1.1.nupkg.sha512",
     "/Users/Shahoul/.nuget/packages/microsoft.extensions.caching.memory/3.1.1/microsoft.extensions.caching.memory.3.1.1.nupkg.sha512",
@@ -56,6 +57,7 @@
     "/Users/Shahoul/.nuget/packages/runtime.native.system.net.http/4.0.1/runtime.native.system.net.http.4.0.1.nupkg.sha512",
     "/Users/Shahoul/.nuget/packages/runtime.native.system.net.security/4.0.1/runtime.native.system.net.security.4.0.1.nupkg.sha512",
     "/Users/Shahoul/.nuget/packages/runtime.native.system.security.cryptography/4.0.1/runtime.native.system.security.cryptography.4.0.1.nupkg.sha512",
+    "/Users/Shahoul/.nuget/packages/sonaranalyzer.csharp/8.15.0.24505/sonaranalyzer.csharp.8.15.0.24505.nupkg.sha512",
     "/Users/Shahoul/.nuget/packages/ssh.net/2016.1.0/ssh.net.2016.1.0.nupkg.sha512",
     "/Users/Shahoul/.nuget/packages/sshnet.security.cryptography/1.2.0/sshnet.security.cryptography.1.2.0.nupkg.sha512",
     "/Users/Shahoul/.nuget/packages/system.appcontext/4.1.0/system.appcontext.4.1.0.nupkg.sha512",

@@ -1,9 +1,10 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
+
 
 namespace foots.Models
 {
-    public partial class Membre
+    public partial class Membre 
     {
         public Membre()
         {

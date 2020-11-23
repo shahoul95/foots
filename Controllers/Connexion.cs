@@ -1,13 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
+
 using System.Linq;
-using System.Text.Json.Serialization;
+
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
-using Newtonsoft.Json;
+
 using foots.Models;
 
 namespace foots.Controllers
@@ -45,10 +44,10 @@ namespace foots.Controllers
                 var ids = profiles.DefaultIfEmpty().Single().IdMembres;
                 var verification = crypt.BCryptVerify(pass, password);
 
-                if (login == id & verification)
+                if (login == id && verification)
                 {
 
-                    Object[] myObjArray = new Object[6] { login, nom, poste, prenom, equipe, phone };
+                  
                     var a = new Membre();
                     a.Login = login;
                     a.Nom = nom;

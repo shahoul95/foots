@@ -1,18 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
+
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-using System.Text.Json.Serialization;
+
 
 using Microsoft.AspNetCore.Http;
 
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
+
 using foots.Models;
 
-using Newtonsoft.Json;
+
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -22,7 +22,7 @@ namespace foots.Controllers
     [Route("[controller]")]
     public class Profile : Controller
     {
-
+  
         public IActionResult Index()
         {
 
@@ -117,6 +117,9 @@ namespace foots.Controllers
                                            from member in context.Membre
                                            where friend.IdMembre == ids && friend.IdAmis == member.IdMembres
                                            select new { friend.IdAmis, member.Prenom, friend.IdMembre });
+
+                 
+                
                 try
                 {
 
@@ -215,6 +218,7 @@ namespace foots.Controllers
                                          from member in context.Membre
                                          where vues.Expediteur == id && member.IdMembres == vues.Expediteur && vues.NonVue == 1
                                          select vues.NonVue);
+                          
                 var count = await vue;
                 var counts = count.Count();
                 try

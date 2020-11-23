@@ -93,3 +93,4 @@
 /Users/Shahoul/Projects/foots/foots/obj/Debug/netcoreapp3.1/foots.pdb
 /Users/Shahoul/Projects/foots/foots/obj/Debug/netcoreapp3.1/foots.genruntimeconfig.cache
 /Users/Shahoul/Projects/foots/foots/obj/Debug/netcoreapp3.1/foots.csprojAssemblyReference.cache
+/Users/Shahoul/Projects/foots/foots/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.Design.dll
