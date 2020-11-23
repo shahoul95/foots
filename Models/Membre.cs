@@ -6,12 +6,7 @@ namespace foots.Models
 {
     public partial class Membre 
     {
-        public Membre()
-        {
-            AmisIdAmisNavigation = new HashSet<Amis>();
-            AmisIdMembreNavigation = new HashSet<Amis>();
-            MessageRecu = new HashSet<MessageRecu>();
-        }
+       
 
         public int IdMembres { get; set; }
         public string Login { get; set; }
@@ -21,6 +16,12 @@ namespace foots.Models
         public string Phone { get; set; }
         public string Equipe { get; set; }
         public string Poste { get; set; }
+        public Membre()
+        {
+            AmisIdAmisNavigation = new HashSet<Amis>();
+            AmisIdMembreNavigation = new HashSet<Amis>();
+            MessageRecu = new HashSet<MessageRecu>();
+        }
 
         public Membre(string login, string motPasses, string nom, string prenom, string phone)
         {

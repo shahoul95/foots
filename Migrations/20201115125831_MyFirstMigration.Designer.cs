@@ -8,7 +8,7 @@ using foots.Models;
 
 namespace foots.Migrations
 {
-    [DbContext(typeof(djibsonContext))]
+    [DbContext(typeof(DjibsonContext))]
     [Migration("20201115125831_MyFirstMigration")]
     partial class MyFirstMigration
     {

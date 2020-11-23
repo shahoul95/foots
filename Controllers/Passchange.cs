@@ -47,7 +47,7 @@ namespace foots.Controllers
         public async Task<JsonResult> update([FromBody] Membre member)
         {
             Chilkat.Crypt2 crypt = new Chilkat.Crypt2();
-            var context = new djibsonContext();
+            var context = new DjibsonContext();
             var nouveaus =  crypt.BCryptHash(member.MotPasses);
             if( member.Login != null && member.MotPasses != null)
             {

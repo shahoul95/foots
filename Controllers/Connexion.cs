@@ -24,7 +24,7 @@ namespace foots.Controllers
         [HttpGet("connexions")]
         public async Task<JsonResult> connexions(string id, string pass)
         {
-            var context = new djibsonContext();
+            var context = new DjibsonContext();
             try
             {
                 Chilkat.Crypt2 crypt = new Chilkat.Crypt2();

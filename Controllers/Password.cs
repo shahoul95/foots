@@ -32,7 +32,7 @@ namespace foots.Controllers
         public async Task<ActionResult> password([FromBody] Membre member)
         {
 
-            var context = new djibsonContext();
+            var context = new DjibsonContext();
             try
             {
                 if (member.Login != null)

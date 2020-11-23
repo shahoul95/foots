@@ -62,7 +62,7 @@ namespace foots.Controllers
         public async Task<JsonResult> GetMessage()
         {
             //je verifie la variables de session "id" si il est vide ou non
-            var context = new djibsonContext();
+            var context = new DjibsonContext();
             if (HttpContext.Session.GetInt32("id") != null)
             {
 
@@ -103,7 +103,7 @@ namespace foots.Controllers
         public async Task<JsonResult> GetAmis()
         {
             //je verifie la variables de session "id" si il est vide ou non
-            var context = new djibsonContext();
+            var context = new DjibsonContext();
 
 
             if (HttpContext.Session.GetInt32("id") != null)
@@ -155,7 +155,7 @@ namespace foots.Controllers
         [HttpPost("message")]
         public async Task<ActionResult> Message([FromBody] MessageRecu message)
         {
-            var context = new djibsonContext();
+            var context = new DjibsonContext();
             try
             {
                 //je teste si les variable de session et les parametre de variable sont non null , donc je rentre dans le if.
@@ -213,7 +213,7 @@ namespace foots.Controllers
                 // On teste pour voir si nos variables ont bien été enregistrées
                 var id = HttpContext.Session.GetInt32("id");
 
-                var context = new djibsonContext();
+                var context = new DjibsonContext();
                 var vue = Task.Run(() => from vues in context.MessageRecu
                                          from member in context.Membre
                                          where vues.Expediteur == id && member.IdMembres == vues.Expediteur && vues.NonVue == 1
@@ -257,7 +257,7 @@ namespace foots.Controllers
                 // On teste pour voir si nos variables ont bien été enregistrées
                 var id = HttpContext.Session.GetInt32("id");
 
-                var context = new djibsonContext();
+                var context = new DjibsonContext();
                 var query = from ord in context.MessageRecu
                             where ord.Expediteur == id
                             select ord;

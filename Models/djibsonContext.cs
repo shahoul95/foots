@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace foots.Models
 {
-    public partial class djibsonContext : DbContext
+    public partial class DjibsonContext : DbContext
     {
-        public djibsonContext()
+        public DjibsonContext()
         {
         }
 
-        public djibsonContext(DbContextOptions<djibsonContext> options)
+        public DjibsonContext(DbContextOptions<DjibsonContext> options)
             : base(options)
         {
         }
